@@ -38,6 +38,9 @@ COPY --chown=zoro:aniwatch package.json .
 # install dependencies
 RUN npm install --omit=dev --ignore-scripts
 
+# install chrome
+RUN npx puppeteer browsers install chrome
+
 # copy public folder from build stage to prod
 COPY --from=build --chown=zoro:aniwatch /home/app/public /app/public
 
