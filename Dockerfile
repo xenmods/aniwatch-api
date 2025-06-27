@@ -47,7 +47,7 @@ COPY --from=build --chown=zoro:aniwatch /home/app/public /app/public
 # copy dist folder from build stage to prod
 COPY --from=build --chown=zoro:aniwatch /home/app/dist /app/dist
 
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s CMD [ "npm", "run", "healthcheck" ]
+# HEALTHCHECK --interval=30s --timeout=3s --start-period=5s CMD [ "npm", "run", "healthcheck" ]
 
 ENV NODE_ENV=production
 ENV PORT=4000
